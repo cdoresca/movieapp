@@ -1,12 +1,13 @@
 import express from "express"
-import * as movie from "../gestion/movieGestion.js"
+import * as shows from "../gestion/showGestion"
+
 
 const router = express.Router()
 
-router.get("/movie/:id", (req,res)=>{
+router.get("/show/:id",(req,res)=>{
     try{
         const id = req.params.id
-        res.json({ movie : movie.get(id)})
+        res.json({show:shows.get(id), episode: shows.getEpisode(id)})
 
     }catch(e){
         console.log(e)

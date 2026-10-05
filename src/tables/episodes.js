@@ -5,6 +5,7 @@ const stmtexiste = db.prepare("SELECT * FROM episode WHERE id = ?")
 const stmtajouter = db.prepare("INSERT INTO episode (name, show_id,video_id) VALUES (?, ?,?)")
 const stmtdelete = db.prepare("DELETE FROM episode WHERE id = ?")
 const stmtupdate = db.prepare("UPDATE episode SET name = ?, show_id = ?, video_id = ? where id = ?")
+const stmtshow = db.prepare("SELECT * FROM episode WHERE show_id =?")
 
 export function getAll(){
     return stmtexisteall.all()
@@ -25,4 +26,8 @@ export function remove(id){
 
 export function update(id, nom, show_id, video_id){
     return stmtupdate.run(nom, show_id,video_id,id)
+}
+
+export function showGet(show_id){
+    return stmtshow.get(show_id)
 }

@@ -1,4 +1,5 @@
 import * as show from "../tables/shows.js"
+import * as episode from "../tables/episodes.js"
 
 
 export function afficher(){
@@ -9,6 +10,12 @@ export function get(id){
     if(!show.get(id))
         throw new Error("ID est  invalide")
     return show.get(id)
+}
+
+export function getEpisode(id){
+    if(!show.get(id))
+        throw new Error("ID est  invalide")
+    return episode.showGet(id)
 }
 
 export function addShow(name){
