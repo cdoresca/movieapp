@@ -1,16 +1,16 @@
 
 function createFicheShow(show){
-    document.getElementById("title").innerHTML = show.name
+    document.getElementById("title").textContent = show.name
     document.getElementById("img").src = show.path_img
     document.getElementById("img").alt = show.name
     document.getElementById("description").innerHTML =`<p> ${show.description}</p>`
 }
 //TODO : ajouer description comme colonne dans show table
-function afficherEpisode(episode){
+function afficherEpisode(episode,show){
     let html = ""
     for(let i = 0; i < episode.lentgh; i++){
         html += `<div>
-                    <a href="/watch.html?id=${episode.video_id}">${episode[i].name}</a>
+                    <a href="/watch.html?id=${episode.video_id}&show=${show.name}&episode=${episode.name}">${episode[i].name}</a>
                 </div>`
     }
     document.getElementById("list-episode").innerHTML=html
@@ -26,7 +26,7 @@ async function init(){
 
     if(reponse.ok){
         createFicheShow(data.show)
-        afficherEpisode(data.episode)
+        afficherEpisode(data.episode,data.show)
     }
     else{
         alert(data.eror)
