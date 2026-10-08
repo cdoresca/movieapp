@@ -3,6 +3,7 @@ import welcome from "./routes/welcomeRoutes.js"
 import login from "./routes/loginRoutes.js"
 import movie from "./routes/movieRoutes.js"
 import video from "./routes/videoRoutes.js"
+import search from "./routes/searchRoutes.js"
 
 
 
@@ -14,6 +15,7 @@ app.use("/api",welcome)
 app.use("/api",login)
 app.use("/api", movie)
 app.use("/api", video)
+app.use("/api", search)
 
 app.use(express.static("public"))
 

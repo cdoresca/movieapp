@@ -5,6 +5,8 @@ const stmtexiste = db.prepare("SELECT * FROM show WHERE id = ?")
 const stmtajouter = db.prepare("INSERT INTO show (name) VALUES (?)")
 const stmtdelete = db.prepare("DELETE FROM show WHERE id = ?")
 const stmtupdate = db.prepare("UPDATE show SET name = ?")
+const stmtsearch = db.prepare("SELECT * FROM show WHERE name LIKE ?")
+
 
 export function getAll(){
     return stmtexisteall.all()
@@ -25,4 +27,8 @@ export function remove(id){
 
 export function update(nom){
     return stmtupdate.run(nom)
+}
+
+export function search(terme){
+    return stmtsearch.all(`%${terme}%`)
 }

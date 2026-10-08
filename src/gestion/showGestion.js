@@ -37,3 +37,8 @@ export function updateShow(id, name){
     show.update(id, name)
 }
 
+
+export function searchShow(terme){
+    return show.searchShow(terme)
+}
+

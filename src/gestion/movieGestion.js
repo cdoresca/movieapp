@@ -39,3 +39,6 @@ export function updateMovie(id, name, video_id){
     movies.update(id, name,video_id)
 }
 
+export function searchMovie(terme){
+    return movies.search(terme)
+}

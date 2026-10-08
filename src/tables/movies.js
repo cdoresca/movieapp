@@ -5,6 +5,7 @@ const stmtexiste = db.prepare("SELECT * FROM movie WHERE id = ?")
 const stmtajouter = db.prepare("INSERT INTO movie (name, video_id) VALUES (?, ?)")
 const stmtdelete = db.prepare("DELETE FROM movie WHERE id = ?")
 const stmtupdate = db.prepare("UPDATE movie SET name = ?, video_id = ? WHERE id = ?")
+const stmtsearch = db.prepare("SELECT * FROM movie WHERE name LIKE ?")
 
 export function getAll(){
     return stmtexisteall.all()
@@ -25,4 +26,8 @@ export function remove(id){
 
 export function update(id, nom, video_id){
     return stmtupdate.run(nom, video_id, id)
+}
+
+export function search(terme){
+    return stmtsearch.all(`%${terme}%`)
 }
