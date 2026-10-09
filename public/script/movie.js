@@ -1,11 +1,12 @@
 
 function createFicheMovie(movie){
-
+    
     document.getElementById("title").textContent = movie.name
-    document.getElementById("img").src = movie.path_img 
+    document.getElementById("img").src = movie.path_img
     document.getElementById("img").alt= movie.name
-    document.getElementById("description").innerHTML =`<p> ${movie.description}</p>`
-    document.getElementById("video").href = `"/watch.html"id=${movie.video_id}&movie=${movie.name}`
+    //document.getElementById("description").innerHTML =`<p> ${movie.description}</p>`
+    
+    document.getElementById("video").href = `/watch.html?id=${movie.video_id}&movie=${movie.name}`
 }
 
 async function init(){

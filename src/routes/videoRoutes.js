@@ -10,7 +10,7 @@ router.get("/video/:id",(req, res)=>{
 
         const range = req.headers.range
         const sizeFile = fs.statSync(video.path).size
-
+        console.log(sizeFile)
         if(!range){
             res.writeHead(200, {
                 "Content-Length": sizeFile,
@@ -20,10 +20,10 @@ router.get("/video/:id",(req, res)=>{
             return 
         }
 
-        const parts = range.replace(/bytes=/, "").split()
-        const start = parseInt(parts[0])
-        const end = parts[1] ? parseInt(parts[1]) : sizeFile - 1
-        const chunkSize = end - start + 1
+        let parts = range.replace(/bytes=/, "").split("-")
+        let start = parseInt(parts[0])
+        let end = parts[1] ? parseInt(parts[1]) : sizeFile - 1
+        let chunkSize = end - start + 1
 
         res.writeHead(206, {
             "Content-Range":`bytes ${start}-${end}/${sizeFile}`,
@@ -32,7 +32,7 @@ router.get("/video/:id",(req, res)=>{
             "Content-Type": "video/mp4",
         })
 
-        fs.createReadStream(video.path).pipe(res)
+        fs.createReadStream(video.path, {start,end}).pipe(res)
     }
     catch(e){
         console.log(e)

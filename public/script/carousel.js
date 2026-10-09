@@ -17,6 +17,7 @@ async function choose(){
 function carousel(data, idConteneur,typeData){
     let html = ""
     for(let i = 0; i < data.length; i++){
+        
         html += `<div class="card">
                     <a href="/${typeData}.html?id=${data[i].id}">
                         <img src="${data[i].path_img}" class="img-fluid rounded" alt="${data[i].name}">

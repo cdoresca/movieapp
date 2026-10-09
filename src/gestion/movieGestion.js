@@ -6,6 +6,7 @@ export function afficher(){
 }
 
 export function get(id){
+    
     if(!movies.get(id))
         throw new Error("ID est  invalide")
     return movies.get(id)

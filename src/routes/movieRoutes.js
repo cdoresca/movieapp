@@ -5,8 +5,9 @@ const router = express.Router()
 
 router.get("/movie/:id", (req,res)=>{
     try{
+        
         const id = req.params.id
-        res.json({ movie : movie.get(id)})
+        res.json(movie.get(id))
 
     }catch(e){
         console.log(e)

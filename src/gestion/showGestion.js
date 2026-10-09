@@ -39,6 +39,6 @@ export function updateShow(id, name){
 
 
 export function searchShow(terme){
-    return show.searchShow(terme)
+    return show.search(terme)
 }
 
