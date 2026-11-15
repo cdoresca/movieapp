@@ -1,0 +1,28 @@
+
+.box{
+    border-style: solid; 
+    border-radius: 10px;
+    margin: 10%;
+    padding: 70px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+input[type=text], input[type=password]{
+    border: 1px solid;
+    border-radius: 8px;
+    width:100%;
+    margin: 2px;
+}
+
+.container{
+    margin:10px 0px;
+}

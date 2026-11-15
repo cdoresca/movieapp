@@ -1,4 +1,8 @@
-
+:root{
+    --primary-bg-color:black;
+    --primary-color:green;
+    --primary-dark-color:darkgreen;
+}
 
 .carousel{
     width:100%;
@@ -51,4 +55,16 @@
     border-radius: .5em;
     text-align: center;
     align-content: center;
+}
+
+.box{
+    text-align: center;
+    border: solid medium var(--primary-dark-color);
+    background-color: var(--primary-color);
+    margin: 10%;
+    border-radius: 10px;
+}
+
+.bg{
+    background-color:var(--primary-bg-color)
 }
