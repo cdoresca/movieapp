@@ -1,9 +1,18 @@
+:root{
+    --primary-bg-color:black;
+    --primary-color:green;
+    --primary-dark-color:darkgreen;
+}
 
+.bd-color{
+    background-color: var(--primary-color);
+}
 .box{
     border-style: solid; 
     border-radius: 10px;
     margin: 10%;
     padding: 70px;
+    background-color: white;
 }
 
 .center{
@@ -25,4 +34,60 @@ input[type=text], input[type=password]{
 
 .container{
     margin:10px 0px;
+}
+
+.button{
+    background-color: var(--primary-dark-color);
+    color: white;
+    padding: 10px 24px;
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.button:hover{
+    background-color: gray;
+    color: black;
+}
+
+.button1{
+    margin-top: 10px;
+    background-color: gray;
+    color: black;
+    padding: 10px 24px;
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+
+}
+
+.button1:hover{
+    background-color: var(--primary-dark-color);
+    color: white;
+}
+
+.rm-a{
+    color: black;
+    padding: 10px 24px;
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.rm-a:hover{
+  
+    background-color: gray;
+    color: black;
+    padding: 10px 24px;
+    border:none;
+    text-align: center;
+    text-decoration: underline;
+    border-radius: 8px;
+    display: inline-block;
 }

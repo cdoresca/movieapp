@@ -15,9 +15,14 @@ document.getElementById("form-login").addEventListener("submit",async(e) =>{
 
     if (reponse.ok) {
         window.location.href = "welcome.html";
+        localStorage.setItem("user",JSON.stringify({username: user, pass:password}))
     } else {
         alert(data.error)
         //afficherErreur("Identifiants invalides");
     }
 
 })
+
+if(localStorage.getItem("user")) 
+    window.location.href = "welcome.html";
+
